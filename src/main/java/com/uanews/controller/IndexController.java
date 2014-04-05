@@ -12,7 +12,7 @@ import com.uanews.NewsLink;
 import com.uanews.dao.LinkListDao;
  
 @Controller
-@RequestMapping("/index")
+@RequestMapping("index")
 public class IndexController {
 	
 	@Autowired
