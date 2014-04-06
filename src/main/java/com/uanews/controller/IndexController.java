@@ -8,30 +8,30 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.uanews.NewsLink;
-import com.uanews.dao.LinkListDao;
+import com.uanews.NewsPost;
+import com.uanews.dao.PostListDao;
  
 @Controller
 @RequestMapping("/index.html")
 public class IndexController {
 		
 	@Autowired
-	private LinkListDao linkListDao;
+	private PostListDao postListDao;
  
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-		List<NewsLink> list = linkListDao.getLinkList();
-		model.addAttribute("linkList", list);		
+		List<NewsPost> list = postListDao.getPostList();
+		model.addAttribute("postList", list);		
 		return "index";
  
 	}
 
-	public LinkListDao getLinkedListDao() {
-		return linkListDao;
+	public PostListDao getLinkedListDao() {
+		return postListDao;
 	}
 
-	public void setLinkedListDao(LinkListDao linkedListDao) {
-		this.linkListDao = linkedListDao;
+	public void setLinkedListDao(PostListDao postListDao) {
+		this.postListDao = postListDao;
 	}
  
 }
