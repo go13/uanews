@@ -13,7 +13,7 @@
 
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 
 	<listener>
@@ -24,5 +24,9 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/root-context.xml</param-value>
 	</context-param>
+		
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>	
 
 </web-app>
