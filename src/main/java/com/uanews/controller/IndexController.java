@@ -19,7 +19,7 @@ public class IndexController {
 	private NewsPostDao newsPostDao;
  
 	@RequestMapping(method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
+	public String index(ModelMap model) {
 		List<NewsPost> list = newsPostDao.getPostList();
 		model.addAttribute("postList", list);		
 		return "index";
