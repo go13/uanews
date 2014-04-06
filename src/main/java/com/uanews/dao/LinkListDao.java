@@ -9,7 +9,7 @@ import com.uanews.NewsLink;
 @Repository("linkListDao")
 public class LinkListDao {	
 	
-	public List<NewsLink> getLinkList(){
+	public List<NewsLink> getLinkList(){	
 		List<NewsLink> list = new ArrayList<NewsLink>();
 		list.add(new NewsLink());
 		list.add(new NewsLink());
