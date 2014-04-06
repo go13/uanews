@@ -14,12 +14,7 @@ import com.uanews.dao.LinkListDao;
 @Controller
 @RequestMapping("/index")
 public class IndexController {
-	
-	public IndexController(){
-		System.out.println("IndexController");
 		
-	}
-	
 	@Autowired
 	private LinkListDao linkListDao;
  
