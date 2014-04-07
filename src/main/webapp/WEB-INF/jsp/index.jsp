@@ -11,8 +11,8 @@
 	for(int i = 0; i < list.size(); i++){
 %>
 	<li class="postclass">
-		<div class="overflowright"><%=(i+1) %>. </div>
-		<div class="votearrow overflowright"></div>
+		<div class="floatleft"><%=(i+1) %>. </div>
+		<div class="votearrow floatleft"></div>
 		<a href="<%=list.get(i).getLink() %>"><%=list.get(i).getTitle() %></a>
 	</li>
 <% } %>

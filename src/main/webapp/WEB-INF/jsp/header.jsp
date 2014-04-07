@@ -6,6 +6,7 @@
 <style>
 .postclass {
 	list-style-type: none;
+	margin-top: 15px
 }
 .votearrow {
 	width: 10px;
@@ -14,18 +15,21 @@
 	margin: 3px 2px 6px;
 	background: url('images/grayarrow.gif') no-repeat;
 }
-.overflowright {
+.floatright {
+	float: right;
+}
+.floatleft {
 	float: left;
+}
+.submitinputclass {
+	margin-left: 40px;
+	width: 400px;
 }
 #menuclass {
 	margin-left: 50px;	
 }
 #menuclass > a {
 	margin-right: 50px;
-}
-#containerclass {
-	margin-left: 150px;
-	width: 600px;
 }
 #linkinputclass {
 	width: 350px;
@@ -34,7 +38,7 @@
 }
 </style>
 <body>
-	<div id="containerclass">
+	<div style="margin-left: 50px; width: 600px">
 		<div id="menuclass">
 			<a href=".">Новини</a><a href="submit.html">Додати</a>
 		</div>		
