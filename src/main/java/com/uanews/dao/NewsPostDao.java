@@ -15,7 +15,8 @@ import com.uanews.NewsPost;
 @Repository("newsPostDao")
 public class NewsPostDao {
 	
-	public static final String LIST_SQL = "SELECT * FROM POSTS"; 
+	public static final String LIST_SQL = "SELECT * FROM POSTS";
+	public static final String ADD_SQL = "INSERT INTO POSTS (link, title, created) values (?, ?, ?) "; 
 	
 	private JdbcTemplate jdbcTemplate;
     
@@ -24,6 +25,14 @@ public class NewsPostDao {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }    
 	
+    public void addNewPost(NewsPost newsPost){
+		jdbcTemplate.update(ADD_SQL, new Object[]{
+				newsPost.getLink(),
+				newsPost.getTitle(),
+				newsPost.getCreated()
+				});		
+	}
+    
 	public List<NewsPost> getPostList(){
 		return jdbcTemplate.query(LIST_SQL, new Object[]{ }, new NewsPostRowMapper());		
 	}

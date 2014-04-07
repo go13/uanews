@@ -1,28 +1,10 @@
-
+<%@page pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.uanews.NewsPost" %>
 
-<html>
-<title>
-UA news
-</title>
-<style>
-.postclass {
-	list-style-type: none;
-}
-.votearrow {
-	width: 10px;
-	height: 10px;
-	border: 0px;
-	margin: 3px 2px 6px;
-	background: url('images/grayarrow.gif') no-repeat;
-}
-.overflowright {
-	float: left;
-}
-</style>
-<body>
+<jsp:include page="header.jsp" />
+
 <ul>
 <%
 	List<NewsPost> list = (List<NewsPost>)request.getAttribute("postList");
@@ -35,5 +17,5 @@ UA news
 	</li>
 <% } %>
 </ul>
-</body>
-</html>
+
+<jsp:include page="bottom.jsp" />

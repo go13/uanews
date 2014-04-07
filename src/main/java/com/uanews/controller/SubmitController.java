@@ -1,7 +1,5 @@
 package com.uanews.controller;
  
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,17 +10,22 @@ import com.uanews.NewsPost;
 import com.uanews.dao.NewsPostDao;
  
 @Controller
-@RequestMapping("/index.html")
-public class IndexController {
+@RequestMapping("/submit.html")
+public class SubmitController {
 		
 	@Autowired
 	private NewsPostDao newsPostDao;
  
 	@RequestMapping(method = RequestMethod.GET)
-	public String index(ModelMap model) {
-		List<NewsPost> list = newsPostDao.getPostList();
-		model.addAttribute("postList", list);		
-		return "index";
+	public String submitGet(ModelMap model) {		
+		return "submit"; 
+	}
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String submitPost(ModelMap model) {
+		NewsPost newsPost = new NewsPost();
+		newsPostDao.addNewPost(newsPost);
+		return "submit"; 
 	}
 
 	public NewsPostDao getNewsPostDao() {
