@@ -5,17 +5,20 @@
 
 <jsp:include page="header.jsp" />
 
-<ul>
+<table style="margin-top: 20px">
+	<tbody>
 <%
 	List<NewsPost> list = (List<NewsPost>)request.getAttribute("postList");
 	for(int i = 0; i < list.size(); i++){
 %>
-	<li class="postclass">
-		<div class="floatleft"><%=(i+1) %>. </div>
-		<div class="votearrow floatleft"></div>
-		<a href="<%=list.get(i).getLink() %>"><%=list.get(i).getTitle() %></a>
-	</li>
+		<tr>
+			<td style="text-align: right;"><%=(i+1) %>.</td>
+			<td><div class="votearrow floatleft"></div></td>
+			<td><a href="<%=list.get(i).getLink() %>"><%=list.get(i).getTitle() %></a></td>
+		</tr>			
 <% } %>
-</ul>
 
+	</tbody>
+</table>
+	
 <jsp:include page="bottom.jsp" />

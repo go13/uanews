@@ -3,6 +3,7 @@ package com.uanews.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,10 +23,9 @@ public class SubmitController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String submitPost(ModelMap model) {
-		NewsPost newsPost = new NewsPost();
+	public String submitPost(@ModelAttribute("newsPost") NewsPost newsPost, ModelMap model) {
 		newsPostDao.addNewPost(newsPost);
-		return "submit"; 
+		return "redirect:index.html"; 
 	}
 
 	public NewsPostDao getNewsPostDao() {

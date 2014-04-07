@@ -1,3 +1,5 @@
+ALTER DATABASE uanews charset=utf8;
+
 CREATE TABLE POSTS (
 	id integer not null auto_increment, 
 	title text, 
