@@ -15,7 +15,7 @@ import com.uanews.NewsPost;
 @Repository("newsPostDao")
 public class NewsPostDao {
 	
-	public static final String LIST_SQL = "SELECT * FROM POSTS ORDER BY created desc";
+	public static final String LIST_SQL = "SELECT * FROM POSTS ORDER BY created desc LIMIT 30";
 	public static final String ADD_SQL = "INSERT INTO POSTS (link, title, created) values (?, ?, ?) "; 
 	
 	private JdbcTemplate jdbcTemplate;
