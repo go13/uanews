@@ -1,23 +1,21 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page pageEncoding="UTF-8" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.uanews.NewsPost" %>
 
 <jsp:include page="header.jsp" />
 
 <table style="margin-top: 20px">
 	<tbody>
-<%
-	List<NewsPost> list = (List<NewsPost>)request.getAttribute("postList");
-	for(int i = 0; i < list.size(); i++){
-%>
+	<c:forEach var="post" items="${postList}" varStatus="loop">  
 		<tr>
-			<td style="text-align: right;"><%=(i+1) %>.</td>
+			<td style="text-align: right;">${loop.index + 1}.</td>
 			<td><div class="votearrow floatleft"></div></td>
-			<td><a href="<%=list.get(i).getLink() %>"><%=list.get(i).getTitle() %></a></td>
-		</tr>			
-<% } %>
-
+			<td>
+				<a href="<c:out value="${post.link}"></c:out>">
+					<c:out value="${post.title}"></c:out>
+				</a>
+			</td>			
+		</tr>	
+	</c:forEach>  		
 	</tbody>
 </table>
 	

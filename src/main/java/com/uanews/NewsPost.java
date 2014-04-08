@@ -6,6 +6,8 @@ public class NewsPost {
 	private long id = 0;
 	private String title = "title";
 	private String link = "#";	
+	private int likes = 0;
+	
 	private Date created = new Date();
 	
 	public String getTitle() {
@@ -31,6 +33,12 @@ public class NewsPost {
 	}
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
 
 }
