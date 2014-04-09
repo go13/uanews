@@ -1,7 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page pageEncoding="UTF-8" %>
 
 <jsp:include page="header.jsp" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+
 
 <table style="margin-top: 20px">
 	<tbody>
@@ -14,7 +19,8 @@
 					<c:out value="${post.title}"></c:out>
 				</a>
 				<div style="margin-left: 5px; font-size: 12; margin-top: 2px;">
-					<c:out value="${post.likes}"></c:out> вподобали
+					<c:out value="${post.likes}"></c:out> вподобали  |  
+					<fmt:formatDate type="both" pattern="HH:mm dd.MM.yy" value="${post.created}"/>
 				</div>
 			</td>
 		</tr>	
@@ -31,6 +37,9 @@ function like(id){
 		});
 }
 $(document).ready(function(){
+
+	$("abbr.timeago").timeago();
+	
 	$(".votearrow").each(function(){		
 
 		var el = this;

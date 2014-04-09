@@ -3,8 +3,6 @@
 	<title>
 	UA news
 	</title>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.cookie.js"></script>
 	<style>
 		.postclass {
 			list-style-type: none;

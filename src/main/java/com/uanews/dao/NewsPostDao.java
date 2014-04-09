@@ -52,7 +52,7 @@ public class NewsPostDao {
 			newsPost.setId(rs.getLong("id"));
 			newsPost.setTitle(rs.getString("title"));
 			newsPost.setLink(rs.getString("link"));
-			newsPost.setCreated(rs.getDate("created"));
+			newsPost.setCreated(rs.getTimestamp("created"));
 			newsPost.setLikes(rs.getInt("likes"));
 			return newsPost;
 		}

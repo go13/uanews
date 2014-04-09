@@ -1,5 +1,7 @@
 package com.uanews.controller;
  
+import java.util.Date;
+
 import org.apache.commons.validator.UrlValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +28,7 @@ public class SubmitController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String submitPost(@ModelAttribute("newsPost") NewsPost newsPost, ModelMap model) {		
 		if(isValidUrl(newsPost.getLink())){
+			newsPost.setCreated(new Date());
 			newsPostDao.addNewPost(newsPost);
 			return "redirect:index.html";
 		}else{

@@ -40,5 +40,4 @@ public class NewsPost {
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
-
 }
