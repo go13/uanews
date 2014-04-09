@@ -16,7 +16,8 @@ import com.uanews.NewsPost;
 public class NewsPostDao {
 	
 	public static final String LIST_SQL = "SELECT * FROM POSTS ORDER BY created desc LIMIT 25";
-	public static final String ADD_SQL = "INSERT INTO POSTS (link, title, created) values (?, ?, ?) "; 
+	public static final String ADD_SQL = "INSERT INTO POSTS (link, title, created) values (?, ?, ?) ";
+	public static final String LIKE_SQL = "UPDATE POSTS SET likes = likes + 1 where id = ? ";
 	
 	private JdbcTemplate jdbcTemplate;
     
@@ -37,6 +38,10 @@ public class NewsPostDao {
 		return jdbcTemplate.query(LIST_SQL, new Object[]{ }, new NewsPostRowMapper());		
 	}
 	
+	public boolean likePost(int id){
+		return jdbcTemplate.update(LIKE_SQL, new Object[]{ Integer.valueOf(id) }) > 0;		
+	}
+	
 	private class NewsPostRowMapper  implements RowMapper {
 		public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 			NewsPost newsPost = new NewsPost();			
@@ -44,6 +49,7 @@ public class NewsPostDao {
 			newsPost.setTitle(rs.getString("title"));
 			newsPost.setLink(rs.getString("link"));
 			newsPost.setCreated(rs.getDate("created"));
+			newsPost.setLikes(rs.getInt("likes"));
 			return newsPost;
 		}
 	 

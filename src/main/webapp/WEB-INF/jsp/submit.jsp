@@ -15,7 +15,7 @@
 			</tr>			
 		</tbody>
 	</table>
-	<input style="margin-top:20px" type="submit" value="Submit">	
+	<input style="margin-top:20px" type="submit" value="Надіслати">	
 </form>
 
 <jsp:include page="bottom.jsp" />
