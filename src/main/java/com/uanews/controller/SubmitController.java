@@ -1,5 +1,6 @@
 package com.uanews.controller;
  
+import org.apache.commons.validator.UrlValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,9 +24,22 @@ public class SubmitController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String submitPost(@ModelAttribute("newsPost") NewsPost newsPost, ModelMap model) {
-		newsPostDao.addNewPost(newsPost);
-		return "redirect:index.html"; 
+	public String submitPost(@ModelAttribute("newsPost") NewsPost newsPost, ModelMap model) {		
+		if(isValidUrl(newsPost.getLink())){
+			newsPostDao.addNewPost(newsPost);
+			return "redirect:index.html";
+		}else{
+			model.addAttribute("validation", "linkError");
+			model.addAttribute("newsPost", newsPost);
+			return "submit";
+		}
+		
+	}
+	
+	private boolean isValidUrl(String link){
+		String[] schemes = {"http","https"};	
+	    UrlValidator urlValidator = new UrlValidator(schemes);
+		return urlValidator.isValid(link);
 	}
 
 	public NewsPostDao getNewsPostDao() {
