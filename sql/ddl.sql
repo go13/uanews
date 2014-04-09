@@ -8,6 +8,3 @@ CREATE TABLE POSTS (
 	created timestamp default CURRENT_TIMESTAMP,
 	primary key (id)
 );
-
-insert into POSTS (title, link) values ('title2', 'http://www.yandex.ru');
-insert into POSTS (title, link) values ('title1', 'http://www.google.com');

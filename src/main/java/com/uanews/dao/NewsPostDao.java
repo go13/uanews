@@ -15,10 +15,14 @@ import com.uanews.NewsPost;
 @Repository("newsPostDao")
 public class NewsPostDao {
 	
-	public static final String LIST_SQL = "SELECT * FROM POSTS ORDER BY created desc LIMIT 25";
+	public static final String LIST_SQL = "SELECT id, title, link, created, likes, " +
+			"(likes+1)/pow((TIMESTAMPDIFF(MINUTE, created, CURRENT_TIMESTAMP)/60)+2, 1.8) as weight " +
+			"FROM POSTS ORDER BY weight desc LIMIT 25";
+
 	public static final String ADD_SQL = "INSERT INTO POSTS (link, title, created) values (?, ?, ?) ";
+
 	public static final String LIKE_SQL = "UPDATE POSTS SET likes = likes + 1 where id = ? ";
-	
+
 	private JdbcTemplate jdbcTemplate;
     
     @Autowired
