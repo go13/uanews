@@ -19,7 +19,7 @@
 					<c:out value="${post.title}"></c:out>
 				</a>
 				<div style="margin-left: 5px; font-size: 12; margin-top: 2px;">
-					<c:out value="${post.likes}"></c:out> вподобали  |  
+					<label id="like-${post.id}">${post.likes}</label> вподобали  |  
 					<fmt:formatDate type="both" pattern="HH:mm dd.MM.yy" value="${post.created}"/>
 				</div>
 			</td>
@@ -57,18 +57,21 @@ $(document).ready(function(){
 			var data_id = parseInt( $(el).attr("data-id") );
 
 			var uacookies = $.cookie("uacookies-09-04-14");
-			
+			var likes = 1 + parseInt($("#like-" + data_id).html());
+
 			var clicked = [];			
 			if(uacookies == null){
 				clicked.push(data_id);				
 				like(data_id);
+				$("#like-" + data_id).html("" + likes);	
 				$.cookie("uacookies-09-04-14", JSON.stringify({ clicked: clicked}));
 			}else{
 				uacookies = JSON.parse(uacookies);
 				clicked = uacookies.clicked;
 				if(clicked.indexOf(data_id) < 0){
 					clicked.push(data_id);
-					like(data_id);					
+					like(data_id);
+					$("#like-" + data_id).html("" + likes);
 					$.cookie("uacookies-09-04-14", JSON.stringify({ clicked: clicked}));
 				}					
 			}			
