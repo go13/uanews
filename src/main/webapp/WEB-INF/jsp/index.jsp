@@ -37,8 +37,6 @@ function like(id){
 		});
 }
 $(document).ready(function(){
-
-	$("abbr.timeago").timeago();
 	
 	$(".votearrow").each(function(){		
 
