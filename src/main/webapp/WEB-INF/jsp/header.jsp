@@ -38,7 +38,7 @@
 		}
 	</style>	
 <body>
-	<div style="margin: auto; margin-top: 10px; width: 85%">
+	<div style="margin: auto; margin-top: 10px; width: 85%; background-color: rgb(246, 246, 239);">
 		<div id="menuclass">
 			<a href=".">Новини</a><a href="submit.html">Додати</a>
 		</div>		

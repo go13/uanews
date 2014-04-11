@@ -8,7 +8,7 @@
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
 
 
-<table style="margin-top: 7px; background-color: rgb(246, 246, 239);">
+<table style="margin-top: 7px">
 	<tbody>
 	<c:forEach var="post" items="${postList}" varStatus="loop">  
 		<tr>
