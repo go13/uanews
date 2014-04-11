@@ -25,20 +25,40 @@
 			margin-left: 40px;
 			width: 400px;
 		}
-		#menuclass {
-			margin-left: 50px;	
+		#menuclass-header {
+			height: 23px;
+			background-color: red;
+			padding-top: 2px;
+		}
+		#menuclass-bottom {
+			height: 2px;
+			background-color: red;
+			margin-top: 20px;
+			margin-bottom: 50px;
 		}
 		#menuclass > a {
-			margin-right: 50px;
+			text-decoration: initial;
 		}
 		#linkinputclass {
 			width: 350px;
 		}
 		#titleinputclass {
 		}
+		.container {
+			margin: auto; 
+			margin-top: 10px;
+			margin-bottom: 10px; 
+			width: 85%; 
+			background-color: rgb(246, 246, 239);
+			padding-bottom: 25px;
+		}
+		a{
+			color: black;
+			text-decoration: initial;
+		}
 	</style>	
 <body>
-	<div style="margin: auto; margin-top: 10px; width: 85%; background-color: rgb(246, 246, 239);">
-		<div id="menuclass">
-			<a href=".">Новини</a><a href="submit.html">Додати</a>
+	<div class="container">
+		<div id="menuclass-header">
+			<a style="margin-left: 50px;" href=".">Новини</a> <a style="margin-left: 90px;" href="submit.html">Додати</a>
 		</div>		

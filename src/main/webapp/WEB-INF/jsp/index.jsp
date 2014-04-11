@@ -12,7 +12,7 @@
 	<tbody>
 	<c:forEach var="post" items="${postList}" varStatus="loop">  
 		<tr>
-			<td style="text-align: right;">${loop.index + 1}.</td>
+			<td style="text-align: right; color: gray;">${loop.index + 1}.</td>
 			<td><a data-id="${post.id}" class="votearrow floatleft"></a></td>
 			<td>
 				<a href="<c:out value="${post.link}"></c:out>">
