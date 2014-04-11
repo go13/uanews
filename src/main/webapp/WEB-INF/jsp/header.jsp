@@ -9,12 +9,11 @@
 			margin-top: 15px
 		}
 		.votearrow {
-			width: 30px;
-			height: 13px;
+			width: 23px;
+			height: 20px;
 			border: 0px;
-			margin: 3px 2px 6px;
 			cursor: pointer;
-			background: url('images/grayarrow.gif') no-repeat;
+			background: url('images/grayarrow.png') no-repeat;
 		}
 		.floatright {
 			float: right;
@@ -39,7 +38,7 @@
 		}
 	</style>	
 <body>
-	<div style="margin-left: 50px; width: 600px">
+	<div style="margin: auto; margin-top: 10px; width: 85%">
 		<div id="menuclass">
 			<a href=".">Новини</a><a href="submit.html">Додати</a>
 		</div>		
