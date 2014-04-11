@@ -60,5 +60,5 @@
 <body>
 	<div class="container">
 		<div id="menuclass-header">
-			<a style="margin-left: 50px;" href=".">Новини</a> <a style="margin-left: 90px;" href="submit.html">Додати</a>
+			<a style="margin-left: 20px;" href=".">Новини</a> <a style="margin-left: 60px;" href="submit.html">Додати</a>
 		</div>		
